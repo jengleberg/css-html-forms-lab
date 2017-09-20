@@ -34,7 +34,7 @@
 				    	</select>
 					</div>
 					<div class="row formGroup">
-				    	<label for="mission">Misison Statement:</label>
+				    	<label for="mission">Mission Statement:</label>
 				    	<textarea id="mission" name="mission"></textarea>
 					</div>
 
@@ -101,24 +101,33 @@
 
 			$( "<section class='container results'><h1>A True Story:</h1>" ).appendTo(main);
 
-			// JS Native:
-			// var results = document.createElement('section');
-			// results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
-			// results.className = 'container results';
-			// main.appendChild(results);
-		};
+			$('.results').append("<p>").append('Once upon a time there was a Developer named' + " " + $("input#name").val() + ('.') + " " + $("input#name").val() + ' came to General Asssembly to' + " " + $("input#verb-1").val() +  " the great mountain of programming knowledge." + " " + $("input#mission").val() + "," + $("input#name").val() + " " + "shouted." + "Though" + $("input.radio").val() + "," + $("input#name").val() + " was able to overcome all obstacles with the power of their" + $("input#noun-1").val() + "." + " In the end, their success can be contributed entirely to their" + " " + $("input#check1").val() + ", " + $("input#check2").val() + ", " + $("input#check3").val() + " " + $("input#noun-2").val() + "."); 
+
+			
+
+			//JS Native:
+			//var results = document.createElement('section');
+			//results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
+			//results.className = 'container results';
+			//main.appendChild(results);
+		}
 
 		$("form").on("submit", function(event){
 
 		    // Stop the form from submitting
+		    event.preventDefault();
 
 	    	// Run the 'makeResults' function seen above
+	    	makeResults();
+
+	    	
 
 	    	/*
 			
 				For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
 
 				"Once upon a time there was a Developer named NAME."
+
 
 				"NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."
 

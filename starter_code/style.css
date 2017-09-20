@@ -3,18 +3,50 @@
 	box-sizing: border-box; 
 	/* ^^^ Forces all elements to include content, padding, and border as part of their width/height calculation: 
 	http://www.w3schools.com/cssref/css3_pr_box-sizing.asp */
-}
+
 
 /* 
 	Use Google Fonts to make all of the text Proza Libre.
+
+}
+
+@import url(https://fonts.google.com/?query=proza&selection.family=Proza+Libre);
+
+body {
+	font-family: 'Proza Libre';
+}
+
+title {
+	font-size: 16px;
+	margin: 10px;
+	font-weight: 800;
+}
 
 	Make the Title twice as large as the body text, bold, and give it some nice margin.
 */
 
 /*-------- Main Styles --------*/
 
+
+
 /* 
 	Make the main container the full width of the page.
+
+	#main {
+	width: 100%;
+
+}
+
+.form {
+	border-radius: 10px;
+	float: left;
+
+}
+
+.results {
+	border-radius: 10px;
+
+}
 
 	Make the two inner containers (the form and the results) float side by side, on the left side of the screen.
 
@@ -24,9 +56,19 @@
 /*-------- Form Styles --------*/
 
 
+
+
 /* 
 
 	Make sure the form itself fills the width of whatever container its in, but no larger than 500px.
+
+	
+.form {
+	width: 100%;
+	max-width: 500px;
+	background: #E3E6EC;
+	background-position: center;
+}
 	
 	The background should be #E3E6EC, and it should align to the middle of its container.
 	
@@ -59,10 +101,16 @@
 /*-------- Results Styles --------*/
 
 
+
 /* 
 
 	The results container should also fill the width of its container, but only up to 500px.
-
+.results {
+	width: 100%;
+	max-width: 500px;
+	background-color: #C8DBB3;
+	padding: 5px;
+}
 	The results container should have a background color of #C8DBB3, and comfortable padding around the text.
 
 */
