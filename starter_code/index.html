@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>CSS HTML Forms Lab</title>
+	<link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -101,7 +102,8 @@
 
 			$( "<section class='container results'><h1>A True Story:</h1>" ).appendTo(main);
 
-			$('.results').append("<p>").append('Once upon a time there was a Developer named' + " " + $("input#name").val() + ('.') + " " + $("input#name").val() + ' came to General Asssembly to' + " " + $("input#verb-1").val() +  " the great mountain of programming knowledge." + " " + $("input#mission").val() + "," + $("input#name").val() + " " + "shouted." + "Though" + $("input.radio").val() + "," + $("input#name").val() + " was able to overcome all obstacles with the power of their" + $("input#noun-1").val() + "." + " In the end, their success can be contributed entirely to their" + " " + $("input#check1").val() + ", " + $("input#check2").val() + ", " + $("input#check3").val() + " " + $("input#noun-2").val() + "."); 
+			
+
 
 			
 
@@ -120,24 +122,24 @@
 	    	// Run the 'makeResults' function seen above
 	    	makeResults();
 
-	    	
-
-	    	/*
+	    	var name = $("#name").val(); 
+			$( "<p>Once upon a time there was a Developer named " + name + ". </p>" ).appendTo('.results');
 			
-				For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
+			var verb1 = $("#verb-1").val(); 
+			$( "<p>" + name + " came to General Asssembly to " + verb1 + " the great mountain of programming knowledge.</p>" ).appendTo('.results');
+			var missionStatement = $("#mission").val(); 
+			$( "<p>\"" + missionStatement + "\", " + name + " shouted.</p>" ).appendTo('.results');
+			var sentiment = $("input[name=sentiment]:checked").val(); 
+			var noun1 = $("#noun-1").val();
+			$( "<p>Though " + sentiment +  ", " + name + " was able to overcome all obstacles with the power of their " + noun1 + ". </p>" ).appendTo('.results');
+			var adjective2 = [];
+			$('input[name="adjective-2"]:checked').each(function() {
+			   	adjective2.push(" " + this.value);
+			});
+			var noun2 = $("#noun-2").val(); 
+			$( "<p>In the end, their success can be contributed entirely to their" + adjective2 + " " + noun2 + ".</p>" ).appendTo('.results');
 
-				"Once upon a time there was a Developer named NAME."
-
-
-				"NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."
-
-				""MISSION", NAME shouted."
-	
-				"Though SENTIMENT, NAME was able to overcome all obstacles with the power of their NOUN."
-
-				"In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."
-
-	    	*/ 
+	    	
 		});
 	</script>
 
